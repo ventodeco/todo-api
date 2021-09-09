@@ -8,5 +8,3 @@ In this backend project, we use tech stacks:
 - MongoDB Atlas
 - Eslint-TypeScript
 - Prettier
-
-Let's get starting! Clone the repo!

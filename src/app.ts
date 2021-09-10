@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
+import router from './routes/index';
 
 const app = express()
 const PORT = 1234
@@ -17,13 +18,7 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true }
 
 app.use(cors())
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Vento Deco')
-})
-
-app.get('/about', (req: Request, res: Response) => {
-    res.send('Ini About')
-})
+app.use(router)
 
 mongoose.set('useFindAndModify', true)
 mongoose.connect(uri, options)
